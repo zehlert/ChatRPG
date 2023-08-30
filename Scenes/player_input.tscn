@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://88d1perwm2cd"]
+
+[ext_resource type="Script" path="res://Scripts/input_response.gd" id="1_p3n5w"]
+[ext_resource type="FontFile" uid="uid://8g0qdv205djh" path="res://Fonts/PixelOperator.ttf" id="2_rh7ak"]
+
+[node name="Input" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 76.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+script = ExtResource("1_p3n5w")
+
+[node name="InputHistory" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_rh7ak")
+theme_override_font_sizes/font_size = 30
+text = "This is what the user Input"
+autowrap_mode = 2

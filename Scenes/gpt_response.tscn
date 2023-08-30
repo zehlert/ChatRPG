@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://1oc45fecoxc1"]
+
+[ext_resource type="Script" path="res://Scripts/gpt_response.gd" id="1_w3voo"]
+[ext_resource type="FontFile" uid="uid://8g0qdv205djh" path="res://Fonts/PixelOperator.ttf" id="2_hxryo"]
+[ext_resource type="Script" path="res://Scripts/Response.gd" id="3_37ef1"]
+[ext_resource type="AudioStream" uid="uid://2xjle544hcvi" path="res://Audio/medium-text-blip-14855.mp3" id="4_vp8dc"]
+
+[node name="GPTResponse" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 26.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_w3voo")
+
+[node name="Response" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_hxryo")
+theme_override_font_sizes/font_size = 30
+text = "This is where the response goes"
+autowrap_mode = 2
+script = ExtResource("3_37ef1")
+
+[node name="Timer" type="Timer" parent="Response"]
+wait_time = 0.05
+autostart = true
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="Response"]
+stream = ExtResource("4_vp8dc")
+
+[connection signal="timeout" from="Response/Timer" to="Response" method="_on_timer_timeout"]
+[connection signal="finished" from="Response/Audio" to="Response" method="_on_audio_finished"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://db4p2acuxsuj6"]
+
+[ext_resource type="FontFile" uid="uid://8g0qdv205djh" path="res://Fonts/PixelOperator.ttf" id="1_ua55m"]
+[ext_resource type="Script" path="res://Scenes/inventory_item.gd" id="2_gwvny"]
+
+[node name="Label" type="Label"]
+theme_override_fonts/font = ExtResource("1_ua55m")
+theme_override_font_sizes/font_size = 25
+text = "TEXT GOES HERE"
+script = ExtResource("2_gwvny")
